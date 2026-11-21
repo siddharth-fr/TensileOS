@@ -1,46 +1,32 @@
-# TensileOS
+<div align="center">
+  <img src="docs/assets/banner.svg" alt="TensileOS Banner" width="100%">
 
-```
-  _______                  _ _       ____   _____ 
- |__   __|                (_) |     / __ \ / ____|
-    | | ___ _ __  ___ _ _  _| | ___| |  | | (___  
-    | |/ _ \ '_ \/ __| | | | | |/ _ \ |  | |\___ \ 
-    | |  __/ | | \__ \ |_| | | |  __/ |__| |____) |
-    |_|\___|_| |_|___/\__,_|_|_|\___|\____/|_____/ 
-                                                  
-  The 32-bit Retro Classic 90s & DOS Desktop on ESP32 Silicon
-```
+  <p align="center">
+    <strong>The Bare-Metal 32-Bit Retro Desktop Operating System for ESP32</strong><br>
+    <em>100% on-chip silicon execution • 320×240 16-color pixel GUI • Streamed in real-time over Wi-Fi</em>
+  </p>
 
-[![Platform](https://img.shields.io/badge/Platform-ESP32%20%7C%20Xtensa%20LX6-red.svg)](https://www.espressif.com/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Version](https://img.shields.io/badge/Release-v0.2.0-brightgreen.svg)]()
-[![VRAM Footprint](https://img.shields.io/badge/VRAM-38.4%20KB-orange.svg)]()
-[![Free Heap](https://img.shields.io/badge/Free%20DRAM-%3E240%20KB-blueviolet.svg)]()
-
-> **TensileOS** is a bare-metal, open-source 32-bit retro Classic 90s / MS-DOS style operating system executing 100% on ESP32 microcontroller silicon. It renders a complete 320×240 16-color pixel GUI with genuine 3D beveled windows, multitasking apps, and virtual disk storage—streamed in real-time over WebSocket to any web browser with zero client installation.
+  <p align="center">
+    <a href="https://www.espressif.com/"><img src="https://img.shields.io/badge/Platform-ESP32%20%7C%20Xtensa%20LX6-red.svg" alt="Platform"></a>
+    <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License: MIT"></a>
+    <a href="CHANGELOG.md"><img src="https://img.shields.io/badge/Release-v0.2.0-brightgreen.svg" alt="Release: v0.2.0"></a>
+    <img src="https://img.shields.io/badge/VRAM-38.4%20KB-orange.svg" alt="VRAM">
+    <img src="https://img.shields.io/badge/Free%20DRAM-%3E240%20KB-blueviolet.svg" alt="Free DRAM">
+  </p>
+</div>
 
 ---
 
-## 📸 Screenshots & Previews
+> **TensileOS** is a bare-metal, open-source 32-bit retro desktop operating system executing 100% on ESP32 microcontroller silicon. It renders a complete 320×240 16-color pixel GUI with genuine 3D beveled windows, multitasking apps, and virtual disk storage—streamed in real-time over WebSocket to any web browser with zero client installation.
 
-```
-┌────────────────────────────────────────────────────────┐
-│ [■] TensileOS - Classic 90s Desktop (320x240 @ 60 FPS)   │
-├────────────────────────────────────────────────────────┤
-│  [My Computer]    ┌─ Hardware Lab ───────────────────┐ │
-│  [Recycle Bin]    │ CRT Oscilloscope & Logic Analyzer│ │
-│  [File Manager]   │  /\__/\  Vpp: 3.12V  SRC: ADC34  │ │
-│  [Web Browser]    │ /      \ 40ms sweep  Freq: 1kHz  │ │
-│                   └──────────────────────────────────┘ │
-│  [Paint]          ┌─ Minesweeper ────────────────────┐ │
-│  [Command Prompt]  │ [016]       [:)]           [042] │ │
-│  [Calculator]     │ 1 1 2 . . . 1 F . . 1 2 1        │ │
-│  [SysMon]         └──────────────────────────────────┘ │
-├────────────────────────────────────────────────────────┤
-│ [Start] [Hardware Lab] [Minesweeper]       [12:45 PM] │
-└────────────────────────────────────────────────────────┘
-```
-*(Drop live screenshots of your desktop into `docs/screenshots/`)*
+---
+
+## 📸 Live Desktop & Previews
+
+<div align="center">
+  <img src="docs/assets/desktop_preview.png" alt="TensileOS Desktop Interface" width="90%" style="border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.5);">
+  <p><em>Live 320×240 16-color pixel desktop with authentic 3D beveled windows, System Monitor, and Command Prompt streaming over Wi-Fi at 60 FPS.</em></p>
+</div>
 
 ---
 
@@ -49,7 +35,7 @@
 * **Not an Emulator, Not a Cloud Stream:** Every pixel, line, bevel, window, and application is computed on bare-metal ESP32 silicon (240 MHz Tensilica Xtensa dual-core) using a custom 4-bit packed 2D raster engine.
 * **Extreme Memory Stewardship:** Consumes just **38,400 bytes** for its 320×240 16-color framebuffer (2 pixels per byte), leaving over **240 KB of free heap** for file caching, audio queues, and multitasking applications.
 * **Zero Hardware Wiring:** No SPI TFT screens, ribbon cables, or breadboards required. The ESP32 hosts its own Wi-Fi Access Point and WebSocket server, streaming full-frame pixel slices to any smartphone, tablet, or PC browser at 60 FPS with local 144 Hz cursor rendering.
-* **Authentic 1995 Experience:** True 2-pixel 3D light/shadow bevels, classic Classic 90s color palette, icons, start menu, system tray clock, PC speaker square-wave chimes, and retro wireframe window dragging.
+* **Authentic 1990s Experience:** True 2-pixel 3D light/shadow bevels, classic 16-color palette, icons, start menu, system tray clock, PC speaker square-wave chimes, and retro wireframe window dragging.
 
 ---
 
@@ -58,12 +44,12 @@
 ### 🪟 TensileOS Desktop & Window Manager
 * **Authentic 3D Beveled Windows:** Active (navy) and inactive (grey) titlebars with minimize, maximize/restore, and close buttons.
 * **60 FPS Wireframe Ghost Dragging:** Iconic 1-pixel dithered houndstooth wireframe outline tracks cursor movements with zero app lag, snapping into place on release.
-* **Taskbar & Start Menu:** 14-item cascading Start Menu, sunken system tray clock, and active taskbar tabs with anti-overlap truncation.
+* **Taskbar & Start Menu:** 14-item cascading Start Menu with vertical `TENSILE OS` banner, sunken system tray clock, and active taskbar tabs with anti-overlap truncation.
 * **Fine-Grained Dirty Tracking:** Isolated taskbar clock redraws (3.8 KB instead of 38.4 KB — 90% bandwidth reduction) and window-level client updates.
 * **Desktop Background Caching:** Pre-rendered teal background and desktop icons blitted via instantaneous `memcpy`.
 
 ### 🎨 Built-in Applications & Tools
-1. **Classic 90s Pixel Paint:** 210×118 4-bit packed canvas, tool palette (Pen, Brush, Eraser, Fill, Line), 16-color VGA palette swatches, brush sizing, scanline flood fill, and LittleFS `.DAT` file save/load.
+1. **TensileOS 2D Pixel Paint:** 210×118 4-bit packed canvas, tool palette (Pen, Brush, Eraser, Fill, Line), 16-color palette swatches, brush sizing, scanline flood fill, and LittleFS `.DAT` file save/load.
 2. **Hardware Lab (Oscilloscope & Logic Analyzer):** Real-time CRT phosphor oscilloscope with 6 signal sources (ADC 34, ADC 35, Sine 1kHz, Square, Triangle, ECG Cardiac), digital measurement panel (Vpp, Vmax, Vmin), and 6 digital GPIO output switches with virtual LED indicators.
 3. **SysBench:** Synthetic hardware benchmark suite measuring CPU integer sieve performance, floating-point MFLOPS, 32-bit RAM bandwidth, LittleFS flash speed, and text render FPS.
 4. **Minesweeper:** Authentic sunken playfield, interactive yellow smiley face reset button, 7-segment digital mine and timer displays, 3D flags, and unrevealed bevel tiles.
@@ -99,18 +85,18 @@
 
 ### Step 2: Clone & Open
 ```bash
-git clone https://github.com/yourusername/tensileos.git
-cd tensileos
+git clone https://github.com/siddharth-fr/TensileOS.git
+cd TensileOS
 ```
 
 ### Step 3: Build & Flash
-* In Arduino IDE:
+* **In Arduino IDE:**
   1. Open `tensileos/tensileos.ino`.
   2. Select your board (e.g. **ESP32 Dev Module**).
   3. Under **Tools → Partition Scheme**, select **Huge APP (3MB No OTA/1MB SPIFFS)**.
   4. Select your COM Port and click **Upload**.
 
-* Or with `arduino-cli`:
+* **Or with `arduino-cli`:**
 ```powershell
 arduino-cli compile --fqbn esp32:esp32:esp32:PartitionScheme=huge_app tensileos
 arduino-cli upload -p COM8 --fqbn esp32:esp32:esp32:PartitionScheme=huge_app tensileos
@@ -156,38 +142,32 @@ arduino-cli upload -p COM8 --fqbn esp32:esp32:esp32:PartitionScheme=huge_app ten
 ## 📂 Project Structure
 
 ```
-tensileos/
-├── tensileos.ino            # System bootloader & dual-core FreeRTOS task pinning
-├── config/
-│   └── config.h             # Wi-Fi credentials, OS name, version, and hardware pins
-├── core/
-│   ├── input.h              # Keyboard scancodes and mouse event definitions
-│   ├── sound.h              # WebAudio tone dispatcher and boot chimes
-│   └── ui.h                 # Base App interface, Viewport, and clipping logic
-├── display/
-│   ├── pixel_gfx.h          # 320x240 4-bit raster engine, memset row fills, CP437 fonts
-│   ├── desktop_wm.h      # Window Manager, Start Menu, Taskbar, wireframe drag
-│   ├── sprites.h      # 4-bit packed pixel icons with transparent magenta masks
-│   ├── screen.h             # Legacy text cell buffers (diff fallback engine)
-│   ├── screensaver.h        # Retro screensavers (Matrix, Starfield, Flying Windows)
-│   └── desktop.h            # Text-mode desktop fallback
-├── fs/
-│   └── tensilefs.h          # LittleFS virtual disk wrapper (Drive C:\) & AUTOEXEC.BAT
-├── net/
-│   ├── net.h                # Wi-Fi AP & Station connection management
-│   ├── webserver.h          # ESP-IDF HTTP + WebSocket server (120-line coalescing)
-│   ├── webui.h              # HTML5/Canvas monitor page with local cursor & rAF
-│   ├── netmgr.h             # Network Manager GUI application
-│   └── web_browser.h        # RetroWeb HTML browser app
-├── shell/
-│   ├── shell.h              # Command Prompt application
-│   └── editor.h             # Notepad text editor with LittleFS file persistence
-├── apps/
-│   ├── apps.h               # File Manager, Calc, Sysmon, My Computer, Recycle Bin
-│   ├── paint.h              # Classic 90s Pixel Paint (tools, swatches, flood fill)
-│   └── hwapps.h             # SysBench & Hardware Lab (Oscilloscope / GPIO switches)
-└── games/
-    └── games.h              # Minesweeper, Tetris, and Snake
+TensileOS/
+├── tensileos/               # Arduino firmware root
+│   ├── tensileos.ino        # Bootloader & dual-core FreeRTOS task pinning
+│   ├── config/              # Wi-Fi credentials, OS name, version, and pins
+│   ├── core/                # Input, sound synthesizer, base UI interfaces
+│   ├── display/             # 320x240 rasterizer, Window Manager, sprites, screensaver
+│   ├── fs/                  # LittleFS virtual disk (Drive C:\) & AUTOEXEC.BAT
+│   ├── net/                 # Wi-Fi AP/STA, WebSocket virtual monitor server
+│   ├── shell/               # Command Prompt and Notepad text editor
+│   ├── apps/                # Paint, Hardware Lab, SysBench, File Manager, Calculator
+│   └── games/               # Minesweeper, Tetris, and Snake
+├── docs/                    # Technical documentation
+│   ├── assets/              # SVG banners, logos, and preview screenshots
+│   ├── architecture.md      # Dual-core architecture & memory maps
+│   ├── getting-started.md   # Setup, flashing, and connection guide
+│   ├── cli-reference.md     # Command prompt syntax & examples
+│   ├── development-guide.md # How to author new apps and drivers
+│   ├── hardware.md          # Pinouts, ADC safety, and wiring
+│   ├── troubleshooting.md   # Flash overflow, COM port, and connection fixes
+│   └── faq.md               # Frequently asked technical questions
+├── .github/                 # GitHub Actions CI workflow & issue templates
+├── CHANGELOG.md             # Semantic Versioning release history
+├── CONTRIBUTING.md          # Contribution guidelines & coding conventions
+├── CODE_OF_CONDUCT.md       # Community collaboration guidelines
+├── LICENSE                  # MIT License
+└── README.md                # Main project showcase
 ```
 
 ---
@@ -218,7 +198,7 @@ All user settings are located in [`tensileos/config/config.h`](tensileos/config/
 - [x] Instantaneous 60 FPS wireframe ghost dragging
 - [x] Turbo rasterizer with SIMD `memset` row fills (116× speedup)
 - [x] Hardware Lab Virtual CRT Oscilloscope with ADC 34/35 & GPIO switches
-- [x] TensileOS 2D Pixel Paint with VGA swatches & flood fill
+- [x] TensileOS 2D Pixel Paint with palette swatches & flood fill
 - [x] Minesweeper, Tetris, Snake with native pixel graphics
 - [x] Fine-grained dirty rects (Taskbar 90% bandwidth drop)
 - [x] Coalesced WebSocket streaming (2 packets/frame max, zero drops)
@@ -230,7 +210,7 @@ All user settings are located in [`tensileos/config/config.h`](tensileos/config/
 ---
 
 ## 🤝 Contributing
-Contributions are warmly welcomed! Please read [CONTRIBUTING.md](docs/CONTRIBUTING.md) for code style guidelines, FreeRTOS task safety practices, and the pull request process.
+Contributions are warmly welcomed! Please read [CONTRIBUTING.md](CONTRIBUTING.md) for code style guidelines, FreeRTOS task safety practices, and the pull request process. Also review our [CODE_OF_CONDUCT.md](CODE_OF_CONDUCT.md).
 
 ---
 
@@ -241,5 +221,5 @@ TensileOS is released under the permissive [MIT License](LICENSE).
 
 ## 🙏 Acknowledgements
 * **Espressif Systems** for the ESP32 microcontroller and ESP-IDF HTTP server framework.
-* **Microsoft Classic 90s** for the timeless GUI design and interface ergonomics.
+* **The pioneer engineers and designers** of the classic 1990s desktop computing era for timeless interface ergonomics.
 * **IBM PC / CP437** for the classic retro monospace typography.

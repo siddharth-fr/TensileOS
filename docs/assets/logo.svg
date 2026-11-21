@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128">
+  <defs>
+    <linearGradient id="chipGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#004080"/>
+      <stop offset="100%" stop-color="#001830"/>
+    </linearGradient>
+    <filter id="retroShadow" x="-10%" y="-10%" width="130%" height="130%">
+      <feDropShadow dx="3" dy="4" stdDeviation="0" flood-color="#000000" flood-opacity="0.8"/>
+    </filter>
+  </defs>
+
+  <!-- Outer 3D Bevel Box -->
+  <rect x="6" y="6" width="116" height="116" rx="10" fill="#c0c0c0" stroke="#808080" stroke-width="2"/>
+  <path d="M6,16 A10,10 0 0,1 16,6 L112,6 A10,10 0 0,1 122,16 L122,18 L18,18 L18,122 L16,122 A10,10 0 0,1 6,112 Z" fill="#ffffff" opacity="0.9"/>
+  <path d="M122,112 A10,10 0 0,1 112,122 L16,122 L18,118 L118,118 L118,18 L122,18 Z" fill="#404040"/>
+
+  <!-- Inner Silicon Plate -->
+  <rect x="18" y="18" width="92" height="92" rx="4" fill="url(#chipGrad)"/>
+
+  <!-- Gold Corner Pins -->
+  <rect x="22" y="22" width="6" height="6" fill="#ffd700"/>
+  <rect x="100" y="22" width="6" height="6" fill="#ffd700"/>
+  <rect x="22" y="100" width="6" height="6" fill="#ffd700"/>
+  <rect x="100" y="100" width="6" height="6" fill="#ffd700"/>
+
+  <!-- Pixel-Art Letter 'T' with 3D Shadow -->
+  <!-- Shadow -->
+  <g fill="#000000" opacity="0.6">
+    <rect x="35" y="38" width="62" height="18"/>
+    <rect x="56" y="56" width="20" height="42"/>
+  </g>
+  <!-- Highlight Top/Left -->
+  <g fill="#e0f0ff">
+    <rect x="32" y="35" width="62" height="18"/>
+    <rect x="53" y="53" width="20" height="42"/>
+  </g>
+  <!-- White Face -->
+  <g fill="#ffffff">
+    <rect x="34" y="37" width="58" height="14"/>
+    <rect x="55" y="51" width="16" height="42"/>
+  </g>
+
+  <!-- Accent Cyan Core Bar -->
+  <rect x="57" y="54" width="4" height="36" fill="#00ffff" opacity="0.8"/>
+  <rect x="36" y="39" width="54" height="3" fill="#00ffff" opacity="0.8"/>
+</svg>
