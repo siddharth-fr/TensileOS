@@ -45,20 +45,20 @@ const uint8_t SPRITE_CURSOR[17 * 6] = {
 };
 
 // 2. Start Button TensileOS Badge Logo (12x12)
-// Custom pixel art: 3D beveled badge with bold white 'T' over blue silicon
+// Custom pixel art matching T-OS logo: silver frame, navy background, white 'T' with maroon shadow
 const uint8_t SPRITE_TENSILE_LOGO[12 * 6] = {
-  P(T,T), P(K,K), P(K,K), P(K,K), P(K,K), P(T,T),
-  P(T,K), P(B,B), P(B,B), P(B,B), P(B,B), P(K,T),
-  P(K,B), P(W,W), P(W,W), P(W,W), P(W,W), P(B,K),
-  P(K,B), P(W,W), P(W,W), P(W,W), P(W,W), P(B,K),
-  P(K,B), P(B,K), P(W,W), P(W,W), P(K,B), P(B,K),
-  P(K,B), P(B,K), P(W,W), P(W,W), P(K,B), P(B,K),
-  P(K,B), P(B,K), P(W,W), P(W,W), P(K,B), P(B,K),
-  P(K,B), P(B,K), P(W,W), P(W,W), P(K,B), P(B,K),
-  P(K,B), P(B,K), P(W,W), P(W,W), P(K,B), P(B,K),
-  P(K,B), P(B,B), P(K,K), P(K,K), P(B,B), P(B,K),
-  P(T,K), P(B,B), P(B,B), P(B,B), P(B,B), P(K,T),
-  P(T,T), P(K,K), P(K,K), P(K,K), P(K,K), P(T,T)
+  P(T,S), P(S,S), P(S,S), P(S,S), P(S,S), P(S,T),
+  P(S,N), P(N,N), P(N,N), P(N,N), P(N,N), P(N,S),
+  P(S,N), P(W,W), P(W,W), P(W,W), P(W,W), P(N,S),
+  P(S,N), P(W,W), P(W,W), P(W,W), P(W,W), P(N,S),
+  P(S,N), P(R,R), P(W,W), P(W,W), P(R,R), P(N,S),
+  P(S,N), P(N,R), P(W,W), P(W,W), P(R,N), P(N,S),
+  P(S,N), P(N,R), P(W,W), P(W,W), P(R,N), P(N,S),
+  P(S,N), P(N,R), P(W,W), P(W,W), P(R,N), P(N,S),
+  P(S,N), P(N,R), P(W,W), P(W,W), P(R,N), P(N,S),
+  P(S,N), P(N,N), P(R,R), P(R,R), P(N,N), P(N,S),
+  P(S,N), P(N,N), P(N,N), P(N,N), P(N,N), P(N,S),
+  P(T,S), P(S,S), P(S,S), P(S,S), P(S,S), P(S,T)
 };
 
 // 3. Desktop Icon: My Computer (24x24)
