@@ -55,5 +55,4 @@ This guide addresses common compile, flash, Wi-Fi, and rendering issues with pra
 * **Fix:** Click anywhere on the TensileOS monitor canvas to grant audio permission; audio tones and chimes will begin playing immediately.
 
 ### Frame rate seems sluggish on older mobile devices
-* **Fix:** The desktop resolution is 320×240. Ensure hardware 
-acceleration is enabled in your browser settings. TensileOS automatically scales using CSS `image-rendering: pixelated` for maximum GPU blitting efficiency.
+* **Fix:** The desktop resolution is 320×240. Ensure hardware acceleration is enabled in your browser settings. TensileOS automatically scales using CSS `image-rendering: pixelated` for maximum GPU blitting efficiency.

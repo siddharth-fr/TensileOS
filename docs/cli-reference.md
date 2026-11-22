@@ -1,6 +1,6 @@
-# TensileOS CLI & Command Prompt Reference
+# TensileOS CLI and Command Prompt Reference
 
-TensileOS features an interactive Command Prompt style Command Prompt accessible via the Start Menu (`Start → Command Prompt`) or desktop icon. It provides a familiar retro command interpreter for querying system status, inspecting virtual disk storage, managing the real-time clock, and launching scripts.
+TensileOS features an interactive Command Prompt terminal accessible via the Start Menu (`Start -> Command Prompt`) or desktop icon. It provides a command interpreter for querying system status, inspecting virtual disk storage on Drive `C:\`, managing the real-time clock, and launching batch automation scripts.
 
 ---
 
@@ -18,9 +18,30 @@ TensileOS features an interactive Command Prompt style Command Prompt accessible
 
 ---
 
-## 2. Detailed Command Usage
+## 2. Application Launch Commands
 
-### `DIR` — Directory Listing
+In addition to internal shell utilities, you can launch any of TensileOS's graphical applications directly from the terminal prompt:
+
+| Application | Command | Description |
+| :--- | :--- | :--- |
+| **Hardware Lab** | `hwlab` | Opens the dual-channel CRT oscilloscope and logic controller |
+| **SysBench** | `sysbench` | Launches the hardware benchmarking suite |
+| **Tensile Paint** | `paint` | Opens the 16-color 2D pixel art studio |
+| **Notepad** | `notepad [FILE]` | Opens the text editor (optionally loading a file from `C:\`) |
+| **File Manager** | `filemgr` | Launches the LittleFS directory and file explorer |
+| **Calculator** | `calc` | Opens the scientific expression calculator |
+| **Minesweeper** | `mine` | Launches the 3D beveled Minesweeper game |
+| **Tetris** | `tetris` | Launches the classic block falling puzzle game |
+| **Snake** | `snake` | Launches the arcade snake action game |
+| **System Monitor** | `sysmon` | Opens live CPU, heap DRAM, and uptime telemetry |
+
+For a complete manual of all applications and their controls, see the [Applications Reference](apps-reference.md).
+
+---
+
+## 3. Detailed Command Usage
+
+### `DIR`: Directory Listing
 Lists the contents of the LittleFS flash storage partition mounted at `C:\`.
 ```
 C:\> DIR
@@ -31,14 +52,14 @@ ART1.DAT       12390
 SYSTEM.INI       512
 ```
 
-### `MEM` — Memory Inspection
+### `MEM`: Memory Inspection
 Queries the internal memory allocator (`ESP.getFreeHeap()`) and displays available RAM:
 ```
 C:\> MEM
 Free Heap: 240 KB
 ```
 
-### `TIME` — Clock Query & Setting
+### `TIME`: Clock Query and Setting
 * **View current time:**
   ```
   C:\> TIME
@@ -51,7 +72,7 @@ Free Heap: 240 KB
   ```
   The system tray clock in the bottom-right corner updates immediately.
 
-### `VER` — OS Version Information
+### `VER`: OS Version Information
 ```
 C:\> VER
 TensileOS v0.2.0 Classic Desktop Edition
@@ -59,7 +80,7 @@ TensileOS v0.2.0 Classic Desktop Edition
 
 ---
 
-## 3. Batch Automation: `AUTOEXEC.BAT`
+## 4. Batch Automation: `AUTOEXEC.BAT`
 TensileOS checks for the existence of `/AUTOEXEC.BAT` in the root of LittleFS at boot. If found, it parses and executes each line sequentially before loading the graphical window manager.
 
 ### Example `AUTOEXEC.BAT`:

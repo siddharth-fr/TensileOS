@@ -1,7 +1,7 @@
 # TensileOS Frequently Asked Questions (FAQ)
 
 ### What is TensileOS?
-TensileOS is a bare-metal, open-source 32-bit retro operating system for the ESP32 microcontroller. It renders an authentic Classic Desktop / Command Prompt style GUI, multitasking desktop, and application suite entirely on-chip and streams it to any web browser over Wi-Fi.
+TensileOS is a bare-metal, open-source 32-bit retro desktop operating system for the ESP32 microcontroller. It renders an authentic 1990s 16-color pixel GUI, complete with a 16-application workstation suite, 3D beveled windows, and a multitasking desktop entirely on-chip, streaming it to any web browser over Wi-Fi.
 
 ---
 
@@ -15,8 +15,8 @@ TensileOS is a bare-metal, open-source 32-bit retro operating system for the ESP
 
 ---
 
-### Can I run actual Classic Desktop `.EXE` or Command Prompt `.COM` binaries?
-No. TensileOS is an original, clean-room operating system that recreates the interface ergonomics, visual aesthetic, and behavioral feel of Classic Desktop and Command Prompt. Programs are written in standard C++ using the TensileOS `App` API.
+### Can I run original x86 `.EXE` or MS-DOS `.COM` binaries?
+No. TensileOS is an original, clean-room operating system that recreates the interface ergonomics, visual aesthetic, and behavioral feel of classic 1990s desktop computing. Programs are written in standard C++ using the TensileOS `App` API.
 
 ---
 

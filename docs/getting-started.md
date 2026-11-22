@@ -9,7 +9,7 @@ This guide walks you through setting up your development environment, compiling 
 * **Hardware:** Any standard ESP32 development board (e.g. ESP32-WROOM-32, NodeMCU-32S, ESP32 Dev Module) with 4 MB Flash.
 * **USB Cable:** Micro-USB or USB-C (depending on your board) with data sync capability.
 * **Computer:** Windows, macOS, or Linux with a modern web browser (Google Chrome, Edge, Safari, Firefox).
-* **Software:** [Arduino IDE 2.x](https://www.arduino.cc/en/software) OR [arduino-cli](https://arduino.github.io/arduino-cli/).
+* **Software:** [Arduino IDE 2.x](https://www.arduino.cc/en/software) or [arduino-cli](https://arduino.github.io/arduino-cli/).
 
 ---
 
@@ -17,12 +17,12 @@ This guide walks you through setting up your development environment, compiling 
 
 ### Method A: Arduino IDE 2.x (GUI)
 1. Open Arduino IDE.
-2. Go to **File → Preferences** (or **Arduino IDE → Settings** on macOS).
+2. Go to **File -> Preferences** (or **Arduino IDE -> Settings** on macOS).
 3. In **Additional boards manager URLs**, add:
    ```
    https://espressif.github.io/arduino-esp32/package_esp32_index.json
    ```
-4. Open **Tools → Board → Boards Manager**, search for `esp32`, and install `esp32` by Espressif Systems (version 2.0.6 or newer; version 3.x is fully supported).
+4. Open **Tools -> Board -> Boards Manager**, search for `esp32`, and install `esp32` by Espressif Systems (version 2.0.6 or newer; version 3.x is fully supported).
 
 ### Method B: Arduino CLI (Command Line)
 ```bash
@@ -55,7 +55,7 @@ Before compiling, you can optionally configure your network settings in [`tensil
 
 ---
 
-## 4. Compiling & Flashing
+## 4. Compiling and Flashing
 
 ### Crucial Step: Partition Scheme
 > [!IMPORTANT]
@@ -64,7 +64,7 @@ Before compiling, you can optionally configure your network settings in [`tensil
 ### Via Arduino IDE:
 1. Open `tensileos/tensileos.ino`.
 2. Connect your ESP32 to your PC via USB.
-3. Select your board: **Tools → Board → ESP32 Arduino → ESP32 Dev Module**.
+3. Select your board: **Tools -> Board -> ESP32 Arduino -> ESP32 Dev Module**.
 4. Configure board settings under **Tools**:
    * **CPU Frequency:** 240MHz (WiFi/BT)
    * **Partition Scheme:** `Huge APP (3MB No OTA/1MB SPIFFS)`
@@ -97,6 +97,7 @@ arduino-cli upload -p COM8 --fqbn esp32:esp32:esp32:PartitionScheme=huge_app ten
 ---
 
 ## 6. Next Steps
-* Learn the architecture: read [Architecture Guide](architecture.md).
+* Explore the full suite of 16 apps and tools: read [Applications Reference Manual](apps-reference.md).
+* Learn the dual-core architecture: read [Architecture Guide](architecture.md).
 * Explore the Command Prompt: read [CLI Reference](cli-reference.md).
 * Add your own custom app or game: read [Development Guide](development-guide.md).

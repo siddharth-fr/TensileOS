@@ -1,4 +1,4 @@
-# TensileOS Architecture & Design
+# TensileOS Architecture and Design
 
 TensileOS is a multi-threaded, bare-metal operating system for the Espressif ESP32. It executes all graphical composition, window management, and application logic directly on microcontroller silicon without an emulator, streaming raw 4-bit pixel framebuffer slices to an HTML5 canvas client over WebSocket.
 
@@ -61,8 +61,8 @@ The ESP32 possesses two 32-bit Xtensa LX6 CPU cores operating at 240 MHz. Tensil
 To achieve high-performance 320×240 graphics with authentic 16-color VGA fidelity on a chip with limited RAM, TensileOS uses a **4-bit packed raster structure**:
 * **Resolution:** 320 pixels wide × 240 pixels high = 76,800 pixels.
 * **Pixel Encoding:** 4 bits per pixel (2 pixels per byte).
-  * High nibble (`byte >> 4`): Even pixel $(x \text{ is even})$.
-  * Low nibble (`byte \& 0x0F`): Odd pixel $(x \text{ is odd})$.
+  * High nibble (`byte >> 4`): Even pixel ($x$ is even).
+  * Low nibble (`byte & 0x0F`): Odd pixel ($x$ is odd).
 * **Pitch:** $320 \div 2 = 160$ bytes per scanline.
 * **Total Framebuffer Size:** $160 \times 240 = \mathbf{38,400\text{ bytes}}$.
 
@@ -71,7 +71,7 @@ In traditional micro-GUI libraries, rectangle fills execute pixel-by-pixel loops
 1. If the starting $x$ coordinate is odd, the low nibble of the first byte is set.
 2. Full pixel pairs are filled using standard libc `memset`, writing **8 pixels (32 bits) per clock cycle**.
 3. If the ending width is odd, the high nibble of the trailing byte is set.
-4. **Performance Gain:** A 200×140 window interior is filled in **0.03 ms**, representing a **116× speedup** over per-pixel branching.
+4. **Performance Gain:** A 200×140 window interior is filled in **0.03 ms**, representing a **116x speedup** over per-pixel branching.
 
 ---
 
@@ -99,7 +99,7 @@ sequenceDiagram
     Client->>Net: Upgrade to WebSocket /ws
     Core0->>Client: Send Boot Chime Tone (Opcode 0x03)
     loop 60 Hz Rendering
-        Core1->>Core1: desktop95.tick() & renderFrame()
+        Core1->>Core1: desktop.tick() & renderFrame()
         Core0->>Client: Stream coalesced dirty slices (Opcode 0x04)
         Client->>Core1: Send mouse coordinates (Opcode 0xF1)
     end
@@ -107,9 +107,9 @@ sequenceDiagram
 
 ---
 
-## 5. Network Streaming & Zero-Contention Locking
+## 5. Network Streaming and Zero-Contention Locking
 
-WebSocket streaming previously caused disconnects due to queue congestion and mutex starvation. TensileOS implements a high-throughput streaming architecture:
+TensileOS implements a high-throughput streaming architecture:
 
 1. **Immediate Lock Release:** `flushTask` acquires `gfx.lock()`, copies the slice into the static `pixPkt` buffer via `memcpy`, clears the dirty bitmask, and **immediately releases `gfx.unlock()`**. Network I/O occurs entirely outside the lock.
 2. **Coalesced Slices (Up to 120 lines):** Rather than generating 8 to 15 small packets, contiguous dirty lines are coalesced into a maximum of 2 packets per frame.
