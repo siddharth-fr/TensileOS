@@ -25,9 +25,19 @@
 ## 📸 Live Desktop & Previews
 
 <div align="center">
-  <img src="docs/assets/desktop_preview.png" alt="TensileOS Desktop Interface" width="90%" style="border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.5);">
-  <p><em>Live 320×240 16-color pixel desktop with authentic 3D beveled windows, System Monitor, and Command Prompt streaming over Wi-Fi at 60 FPS.</em></p>
+  <img src="docs/assets/desktop_preview.png" alt="TensileOS Multitasking Desktop" width="92%" style="border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.5);">
+  <p><em>Multitasking on bare-metal ESP32 silicon: Command Prompt, Notepad, and Minesweeper with live taskbar tabs and real-time clock.</em></p>
 </div>
+
+| Clean Desktop & 16-Color Icons | Start Menu Navigation |
+| :---: | :---: |
+| <img src="docs/assets/screenshots/desktop_clean.png" alt="Clean Desktop" width="100%"> | <img src="docs/assets/screenshots/desktop_start_menu.png" alt="Start Menu" width="100%"> |
+| **Authentic 90s Desktop** with classic teal wallpaper & 11 icons | **Cascading Start Menu** with vertical `TENSILE OS` brand stripe |
+
+| Minesweeper Game | Notepad Text Editor |
+| :---: | :---: |
+| <img src="docs/assets/screenshots/app_minesweeper.png" alt="Minesweeper" width="100%"> | <img src="docs/assets/screenshots/app_notepad.png" alt="Notepad" width="100%"> |
+| **Minesweeper** with 3D sunken tiles, timer & reset smiley | **Notepad** reading and editing files directly on LittleFS flash |
 
 ---
 
