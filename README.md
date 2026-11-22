@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="docs/assets/banner.svg" alt="TensileOS Banner" width="100%">
+  <img src="docs/assets/banner.jpeg" alt="TensileOS Banner" width="100%">
 
   <p align="center">
     <strong>The Bare-Metal 32-Bit Retro Desktop Operating System for ESP32</strong><br>
