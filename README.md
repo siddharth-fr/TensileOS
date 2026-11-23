@@ -18,7 +18,7 @@
 
 ---
 
-**TensileOS** is a bare-metal, open-source 32-bit retro desktop operating system executing directly on ESP32 microcontroller silicon. It renders a complete 320×240 16-color pixel GUI with genuine 3D beveled windows, a 16-application workstation suite, and virtual disk storage. The entire graphical desktop streams in real-time over WebSocket to any web browser with zero client installation.
+**TensileOS** is a bare-metal, open-source 32-bit retro desktop operating system executing directly on ESP32 microcontroller silicon. It renders a complete 320×240 16-color pixel GUI with genuine 3D beveled windows, a 17-application workstation suite, and virtual disk storage. The entire graphical desktop streams in real-time over WebSocket to any web browser with zero client installation.
 
 ---
 
@@ -42,7 +42,7 @@ The screenshots below show TensileOS running on a standard ESP32 development boa
 | **Minesweeper**: Sunken 3D tiles, digital 7-segment timers, flag placement, and interactive reset smiley. | **Notepad**: Text editor with LittleFS file persistence reading and writing files on Drive `C:\`. |
 
 > [!NOTE]
-> These previews show only 4 of the **16 built-in applications and diagnostic tools** bundled with TensileOS. See the [Application Suite Matrix](#complete-16-application-suite-matrix) below and the [Applications Reference Manual](docs/apps-reference.md) for full documentation of every tool.
+> These previews show only 4 of the **17 built-in applications and diagnostic tools** bundled with TensileOS. See the [Application Suite Matrix](#complete-17-application-suite-matrix) below and the [Applications Reference Manual](docs/apps-reference.md) for full documentation of every tool.
 
 ---
 
@@ -56,9 +56,9 @@ The screenshots below show TensileOS running on a standard ESP32 development boa
 
 ---
 
-## Complete 16-Application Suite Matrix
+## Complete 17-Application Suite Matrix
 
-TensileOS comes fully equipped out of the box with 16 native applications, diagnostics, and tools:
+TensileOS comes fully equipped out of the box with 17 native applications, diagnostics, and tools:
 
 | Category | Application | Binary / ID | Description |
 | :--- | :--- | :--- | :--- |
@@ -68,6 +68,7 @@ TensileOS comes fully equipped out of the box with 16 native applications, diagn
 | **Productivity** | **Notepad** | `notepad` | Full-screen text editor reading and editing plain text files (`*.TXT`, `*.BAT`, `*.INI`) directly on Drive `C:\`. |
 | **Storage** | **File Manager** | `filemgr` | Dual-pane LittleFS explorer to create, rename, view sizes, open, and delete files on Drive `C:\`. |
 | **Mathematics** | **Scientific Calculator** | `calc` | Expression evaluator supporting parentheses, precedence, powers, trigonometry (`sin`, `cos`, `tan`), logarithms (`ln`, `log`), and constants ($\pi$, $e$). |
+| **Entertainment** | **TensileDoom** | `doom` | Native 2.5D first-person shooter engine with 192-column DDA raycasting, 16-color distance shading, E1M1 level homage, sliding airlock doors, animated Doomguy HUD face, and Shotgun/Pistol combat. |
 | **Entertainment** | **Minesweeper** | `mine` | Classic 3D sunken tile field, 7-segment digital displays, flag toggles, interactive reset smiley button, and WebAudio sounds. |
 | **Entertainment** | **Tetris** | `tetris` | 7 standard tetrominoes with 3D light/shadow bevels, score counter, line clear tones, and next piece preview. |
 | **Entertainment** | **Snake** | `snake` | 3D beveled snake, food apple, boundary collision detection, sound effects, and persistent high score tracking. |
@@ -203,7 +204,8 @@ TensileOS/
 - [x] Turbo rasterizer with SIMD `memset` row fills (116x speedup)
 - [x] Hardware Lab Virtual CRT Oscilloscope with ADC 34/35 and GPIO output switches
 - [x] Tensile Paint with 16-color palette swatches and scanline flood fill
-- [x] Full suite of 16 native applications, games, and system tools
+- [x] Full suite of 17 native applications, games, and system tools
+- [x] Native 2.5D TensileDoom FPS engine with E1M1 map, weapons, and combat AI
 - [x] Fine-grained dirty tracking (Taskbar redraw uses only 3.8 KB instead of 38.4 KB)
 - [x] Coalesced WebSocket streaming (maximum 2 packets per frame)
 - [ ] Sound card emulation and MIDI audio playback engine

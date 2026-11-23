@@ -1,6 +1,6 @@
 # TensileOS Applications and Tools Reference Manual
 
-TensileOS ships with 16 native applications, diagnostic utilities, productivity tools, and retro games. Every program is written in bare-metal C++, compiled directly for the ESP32 Xtensa dual-core processor, and executes 100% on microcontroller silicon with zero emulation.
+TensileOS ships with 17 native applications, diagnostic utilities, productivity tools, and retro games. Every program is written in bare-metal C++, compiled directly for the ESP32 Xtensa dual-core processor, and executes 100% on microcontroller silicon with zero emulation.
 
 This manual provides a technical reference for each application, covering its launch commands, user controls, LittleFS flash persistence, and hardware resource footprint.
 
@@ -16,6 +16,7 @@ This manual provides a technical reference for each application, covering its la
 | **Notepad** | Productivity & Text | `notepad` / `editor` | Read/Write (`*.TXT`, `*.BAT`, `*.INI`) | Text stream buffer |
 | **File Manager** | Virtual Disk & Storage | `filemgr` | Read/Write/Delete (`C:\`) | LittleFS partition driver |
 | **Scientific Calculator** | Mathematics & Compute | `calc` | None | Math runtime |
+| **TensileDoom** | Entertainment & 3D FPS | `doom` | None | DDA Raycaster, WebAudio synthesizer |
 | **Minesweeper** | Entertainment | `mine` | High Score | Audio synthesizer |
 | **Tetris** | Entertainment | `tetris` | High Score | Audio synthesizer |
 | **Snake** | Entertainment | `snake` | High Score | Audio synthesizer |
@@ -174,6 +175,28 @@ A dual-mode standard and scientific calculator featuring an expression evaluator
 ---
 
 ## 5. Retro Gaming Suite
+
+### TensileDoom (3D First-Person Shooter)
+A native 2.5D Doom raycasting engine executing on ESP32 silicon inside a standard 3D beveled desktop window. Features a 192-column DDA raycaster, 16-color VGA distance shading, animated sliding doors, combat AI, and classic audio.
+
+* **Launch Methods:**
+  * Start Menu: `Start -> Programs -> Games -> TensileDoom`
+  * Desktop: Double-click the **TensileDoom** helmet icon
+  * Command Prompt: `C:\> doom`
+* **Features:**
+  * **E1M1 Level Homage:** 24x24 tile map with zig-zag corridors, central computer terminal room, toxic slime pits, and locked exit airlock.
+  * **Interactive Airlock Doors:** Press `Space` or `E` to trigger hydraulic vertical door sliding.
+  * **Weapons:** Hitscan Pistol and pump-action Shotgun with animated viewmodel recoil and muzzle flash overlays.
+  * **Enemies:** Former Human Zombiemen and Imps with line-of-sight tracking, fireball projectile physics, and death animations.
+  * **Status Bar (HUD):** Classic status bar featuring an animated 16x16 Doomguy face (glances left/right, grimaces when wounded, dead face with crosses), Armor, Health, and Ammo readouts.
+  * **Audio Synthesizer:** WebAudio square-wave sound effects for gunfire, door hydraulics, imp growls, and item pickups.
+* **Controls:**
+  * `W, A, S, D` or `Arrow Keys`: Move and turn.
+  * `Space` or `E`: Open airlock doors, activate exit switch.
+  * `Left Click` or `F`: Fire active weapon.
+  * `Right Click`: Open door.
+  * `1` / `2`: Select Pistol / Shotgun.
+  * `R`: Restart game upon victory or defeat.
 
 ### Minesweeper
 An authentic recreation of the classic puzzle game with 3D sunken tiles, digital LED readouts, and an interactive reset smiley button.

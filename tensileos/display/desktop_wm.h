@@ -12,6 +12,7 @@
 #include "shell/editor.h"
 #include "apps/apps.h"
 #include "games/games.h"
+#include "games/doom.h"
 #include "apps/hwapps.h"
 #include "apps/paint.h"
 #include "net/netmgr.h"
@@ -48,6 +49,9 @@ static void rtcTick() {
     }
   }
 }
+
+// Forward declaration
+void desktopLaunch(const char* id, const char* arg);
 
 // Interactive Command Prompt inside a window
 class ShellWin : public App {
@@ -149,6 +153,9 @@ class ShellWin : public App {
       }
     } else if (!strcasecmp(cmd, "reboot")) {
       ESP.restart();
+    } else if (!strcasecmp(cmd, "doom")) {
+      addLine("Starting TensileDoom...");
+      desktopLaunch("doom", "");
     } else {
       addLine("Bad command or file name");
     }
@@ -252,6 +259,9 @@ class TensileDesktop {
     drawIcon(156, 108, SPRITE_MY_COMPUTER,"SysMon");
     drawIcon(156, 158, SPRITE_FLOPPY,     "Time /", "Date");
 
+    // Column 3 (x = 228)
+    drawIcon(228, 8,   SPRITE_DOOM,       "Tensile", "Doom");
+
     gfx.fb = origFb;
     bgCacheValid = true;
   }
@@ -295,6 +305,7 @@ class TensileDesktop {
     else if (!strcmp(id, "netmgr"))  a = new NetManager();
     else if (!strcmp(id, "browser")) a = new RetroWeb(arg);
     else if (!strcmp(id, "terminal"))a = new ShellWin();
+    else if (!strcmp(id, "doom"))    a = new TensileDoom();
 
     if (!a) return;
 
@@ -398,6 +409,7 @@ class TensileDesktop {
       drawIcon(156, 58,  SPRITE_NET,        "Network");
       drawIcon(156, 108, SPRITE_MY_COMPUTER,"SysMon");
       drawIcon(156, 158, SPRITE_FLOPPY,     "Time /", "Date");
+      drawIcon(228, 8,   SPRITE_DOOM,       "Tensile", "Doom");
     }
 
     // 2. Draw Windows (inactive first, active last)
@@ -501,7 +513,7 @@ class TensileDesktop {
   }
 
   void drawStartMenu() {
-    int mx = 2, my = 30, mw = 126, mh = 186;
+    int mx = 2, my = 18, mw = 126, mh = 198;
     gfx.fillRect(mx, my, mw, mh, COL_SILVER);
     gfx.drawBevelBox(mx, my, mw, mh, false);
 
@@ -518,11 +530,11 @@ class TensileDesktop {
       "File Manager", "Notepad", "ANSI Paint", "Calculator",
       "Web Browser", "Hardware Lab", "Network Manager",
       "Command Prompt", "System Monitor", "Date / Time",
-      "Snake Game", "Minesweeper", "Tetris Game", "Shut Down..."
+      "TensileDoom", "Snake Game", "Minesweeper", "Tetris Game", "Shut Down..."
     };
-    for (int i = 0; i < 14; i++) {
+    for (int i = 0; i < 15; i++) {
       int iy = my + 4 + i * 13;
-      gfx.drawText6x8(mx + 24, iy + 2, items[i], (i == 13 ? COL_RED : COL_BLACK), COL_SILVER);
+      gfx.drawText6x8(mx + 24, iy + 2, items[i], (i == 14 ? COL_RED : COL_BLACK), COL_SILVER);
     }
   }
 
@@ -603,7 +615,7 @@ class TensileDesktop {
 
     // 5. Click in Start Menu
     if (startMenuOpen) {
-      int mx = 2, my = 30, mw = 126, mh = 186;
+      int mx = 2, my = 18, mw = 126, mh = 198;
       if (mouseX >= mx && mouseX <= mx + mw && mouseY >= my && mouseY <= my + mh) {
         int item = (mouseY - (my + 4)) / 13;
         startMenuOpen = false;
@@ -618,10 +630,11 @@ class TensileDesktop {
         else if (item == 7) launch("terminal");
         else if (item == 8) launch("sysmon");
         else if (item == 9) launch("timeset");
-        else if (item == 10) launch("snake");
-        else if (item == 11) launch("mines");
-        else if (item == 12) launch("tetris");
-        else if (item == 13) { showShutDown = true; markDirty(); return; }
+        else if (item == 10) launch("doom");
+        else if (item == 11) launch("snake");
+        else if (item == 12) launch("mines");
+        else if (item == 13) launch("tetris");
+        else if (item == 14) { showShutDown = true; markDirty(); return; }
         markDirty();
         return;
       }
@@ -730,6 +743,10 @@ class TensileDesktop {
         else if (row == 1) launch("netmgr");
         else if (row == 2) launch("sysmon");
         else if (row == 3) launch("timeset");
+        return;
+      }
+      if (mouseX >= 220 && mouseX <= 280) { // Col 3
+        if (row == 0) launch("doom");
         return;
       }
     }

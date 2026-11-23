@@ -30,6 +30,7 @@ In addition to internal shell utilities, you can launch any of TensileOS's graph
 | **Notepad** | `notepad [FILE]` | Opens the text editor (optionally loading a file from `C:\`) |
 | **File Manager** | `filemgr` | Launches the LittleFS directory and file explorer |
 | **Calculator** | `calc` | Opens the scientific expression calculator |
+| **TensileDoom** | `doom` | Launches the 2.5D Doom raycasting first-person shooter |
 | **Minesweeper** | `mine` | Launches the 3D beveled Minesweeper game |
 | **Tetris** | `tetris` | Launches the classic block falling puzzle game |
 | **Snake** | `snake` | Launches the arcade snake action game |

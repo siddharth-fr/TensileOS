@@ -369,6 +369,34 @@ const uint8_t SPRITE_CMD[24 * 12] = {
   P(T,T), P(T,T), P(T,T), P(T,T), P(T,T), P(T,T), P(T,T), P(T,T), P(T,T), P(T,T), P(T,T), P(T,T)
 };
 
+// 14. Desktop Icon: TensileDoom Helmet (24x24)
+const uint8_t SPRITE_DOOM[24 * 12] = {
+  P(T,T), P(T,T), P(T,T), P(T,T), P(T,T), P(T,T), P(T,T), P(T,T), P(T,T), P(T,T), P(T,T), P(T,T),
+  P(T,T), P(T,T), P(T,K), P(K,K), P(K,K), P(K,K), P(K,K), P(K,T), P(T,T), P(T,T), P(T,T), P(T,T),
+  P(T,T), P(T,K), P(K,L), P(L,L), P(L,L), P(L,L), P(L,L), P(L,K), P(K,T), P(T,T), P(T,T), P(T,T),
+  P(T,T), P(K,L), P(W,L), P(L,L), P(L,L), P(L,L), P(L,L), P(L,L), P(L,K), P(T,T), P(T,T), P(T,T),
+  P(T,K), P(L,W), P(W,L), P(L,L), P(L,L), P(L,L), P(L,L), P(L,L), P(L,L), P(K,T), P(T,T), P(T,T),
+  P(T,K), P(L,L), P(L,L), P(L,L), P(L,L), P(L,L), P(L,L), P(L,L), P(L,L), P(K,T), P(T,T), P(T,T),
+  P(T,K), P(L,L), P(S,S), P(S,S), P(S,S), P(S,S), P(S,S), P(S,L), P(L,L), P(K,T), P(T,T), P(T,T),
+  P(T,K), P(L,S), P(S,K), P(K,K), P(K,K), P(K,K), P(K,K), P(S,S), P(L,L), P(K,T), P(T,T), P(T,T),
+  P(K,L), P(S,K), P(B,B), P(B,B), P(B,B), P(B,B), P(B,B), P(B,K), P(S,L), P(L,K), P(T,T), P(T,T),
+  P(K,L), P(S,K), P(B,W), P(B,B), P(B,B), P(B,B), P(B,B), P(B,K), P(S,L), P(L,K), P(T,T), P(T,T),
+  P(K,L), P(S,K), P(B,B), P(W,B), P(B,B), P(B,B), P(B,B), P(B,K), P(S,L), P(L,K), P(T,T), P(T,T),
+  P(K,L), P(S,K), P(B,B), P(B,B), P(B,B), P(B,B), P(B,B), P(B,K), P(S,L), P(L,K), P(T,T), P(T,T),
+  P(T,K), P(L,S), P(K,B), P(B,B), P(B,B), P(B,B), P(B,K), P(S,L), P(L,K), P(T,T), P(T,T), P(T,T),
+  P(T,K), P(L,L), P(S,S), P(K,K), P(K,K), P(K,K), P(S,S), P(L,L), P(L,K), P(T,T), P(T,T), P(T,T),
+  P(T,K), P(L,L), P(L,S), P(G,G), P(G,G), P(G,G), P(S,L), P(L,L), P(L,K), P(T,T), P(T,T), P(T,T),
+  P(T,T), P(K,L), P(L,L), P(S,K), P(S,K), P(S,L), P(L,L), P(L,K), P(K,T), P(T,T), P(T,T), P(T,T),
+  P(T,T), P(K,L), P(L,L), P(S,K), P(S,K), P(S,L), P(L,L), P(L,K), P(T,T), P(T,T), P(T,T), P(T,T),
+  P(T,T), P(T,K), P(L,L), P(S,S), P(S,S), P(S,L), P(L,K), P(T,T), P(T,T), P(T,T), P(T,T), P(T,T),
+  P(T,T), P(T,K), P(K,K), P(K,K), P(K,K), P(K,K), P(K,T), P(T,T), P(T,T), P(T,T), P(T,T), P(T,T),
+  P(T,T), P(T,T), P(K,G), P(G,G), P(G,G), P(G,G), P(G,K), P(T,T), P(T,T), P(T,T), P(T,T), P(T,T),
+  P(T,T), P(T,T), P(T,T), P(T,T), P(T,T), P(T,T), P(T,T), P(T,T), P(T,T), P(T,T), P(T,T), P(T,T),
+  P(T,T), P(T,T), P(T,T), P(T,T), P(T,T), P(T,T), P(T,T), P(T,T), P(T,T), P(T,T), P(T,T), P(T,T),
+  P(T,T), P(T,T), P(T,T), P(T,T), P(T,T), P(T,T), P(T,T), P(T,T), P(T,T), P(T,T), P(T,T), P(T,T),
+  P(T,T), P(T,T), P(T,T), P(T,T), P(T,T), P(T,T), P(T,T), P(T,T), P(T,T), P(T,T), P(T,T), P(T,T)
+};
+
 #undef T
 #undef K
 #undef W
